@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Emscripten-Generated Code</title>
+    <title>OpenXTalk Playgrround Web Stack</title>
     <style>
       body {
         font-family: arial;
@@ -13,7 +13,7 @@
 
       .emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
       div.emscripten { text-align: center; }
-      div.emscripten_border { border: 1px solid black; }
+      div.emscripten_border { border: 1px solid gray; }
       /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
       canvas.emscripten { border: 0px none; }
 
@@ -23,11 +23,11 @@
       }
 
       .spinner {
-        height: 30px;
-        width: 30px;
-        margin: 0;
-        margin-top: 20px;
-        margin-left: 20px;
+        height: 24px;
+        width: 24px;
+        margin: 1px;
+        margin-top: 5px;
+        margin-left: 120px;
         display: inline-block;
         vertical-align: top;
 
@@ -36,13 +36,13 @@
         -o-animation: rotation .8s linear infinite;
         animation: rotation 0.8s linear infinite;
 
-        border-left: 5px solid rgb(235, 235, 235);
-        border-right: 5px solid rgb(235, 235, 235);
-        border-bottom: 5px solid rgb(235, 235, 235);
-        border-top: 5px solid rgb(120, 120, 120);
+        border-left: 5px solid rgb(150, 150, 150);
+        border-right: 5px solid rgb(180, 180, 180);
+        border-bottom: 3px solid rgb(200, 150, 220);
+        border-top: 3px solid rgb(150, 180, 200);
 
-        border-radius: 100%;
-        background-color: rgb(150, 150, 180);
+        border-radius: 48px;
+        background-color: rgb(100, 100, 150);
       }
 
       @-webkit-keyframes rotation {
@@ -65,30 +65,30 @@
       #status {
         display: inline-block;
         vertical-align: top;
-        margin-top: 30px;
-        margin-left: 20px;
+        margin-top: 5px;
+        margin-left: 48px;
         font-weight: bold;
-        color: rgb(120, 120, 120);
+        color: rgb(150, 120, 150);
       }
 
       #progress {
-        height: 20px;
-        width: 30px;
+        height: 32px;
+        width: 100px;
       }
 
       #controls {
         display: inline-block;
         float: right;
         vertical-align: top;
-        margin-top: 30px;
-        margin-right: 20px;
+        margin-top: 10px;
+        margin-right: 10px;
       }
 
       #output {
-        width: 100%;
-        height: 200px;
+        width: 99%;
+        height: 100px;
         margin: 0 auto;
-        margin-top: 10px;
+        margin-top: 1px;
         display: block;
         background-color: black;
         color: white;
@@ -101,7 +101,7 @@
     <a href="https://openxtalk.org">
       <?xml version="1.0" encoding="utf-8"?>
       <svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-      	 x="0px" y="0px" width="192px" height="224px" viewBox="0 0 192 224" overflow="visible" xml:space="preserve">
+      	 x="0px" y="0px" width="32px" height="24px" viewBox="0 0 64px 64px" overflow="visible">
       <g>
       	<path fill="#666396" d="M155.99,57.5c2.72,2.56,1.73,6.05-1.1,8.12c1.73,1.8,1.48,4.46-0.07,6.22c1.63,1.66,1.78,4.3,0.26,6.03
       		c1.43,1.65,1.5,3.99,0.12,5.68c1.26,1.52,1.36,3.77,0.12,5.36c1.2,1.55,1.19,3.68,0,5.24c3.59,5.97-5.03,8.81-8.5,12.19

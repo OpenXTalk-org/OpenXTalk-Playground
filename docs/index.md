@@ -23,8 +23,8 @@
       }
 
       .spinner {
-        height: 48px;
-        width: 48px;
+        height: 30px;
+        width: 30px;
         margin: 0;
         margin-top: 20px;
         margin-left: 20px;
@@ -96,14 +96,12 @@
         outline: none;
       }
     </style>
-<script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
-
   </head>
   <body>
     <a href="https://openxtalk.org">
       <?xml version="1.0" encoding="utf-8"?>
       <svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-      	 x="0px" y="0px" width="150px" height="200x" viewBox="0 0 175 225" overflow="visible" xml:space="preserve">
+      	 x="0px" y="0px" width="192px" height="224px" viewBox="0 0 192 224" overflow="visible" xml:space="preserve">
       <g>
       	<path fill="#666396" d="M155.99,57.5c2.72,2.56,1.73,6.05-1.1,8.12c1.73,1.8,1.48,4.46-0.07,6.22c1.63,1.66,1.78,4.3,0.26,6.03
       		c1.43,1.65,1.5,3.99,0.12,5.68c1.26,1.52,1.36,3.77,0.12,5.36c1.2,1.55,1.19,3.68,0,5.24c3.59,5.97-5.03,8.81-8.5,12.19
@@ -200,7 +198,7 @@
   </a>
 
     <div class="spinner" id='spinner'></div>
-    <div class="emscripten" id="status">Downloading xTalk WebStack...</div>
+    <div class="emscripten" id="status">Downloading...</div>
 
 <span id='controls'>
   <span><input type="checkbox" id="resize">Resize canvas</span>
@@ -301,7 +299,6 @@
         };
       };
     </script>
-
     <script>
 
           (function() {

@@ -94,7 +94,20 @@
         outline: none;
       }
     </style>
-<script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
+
+    <script>
+    function get_time() {
+        var date = new Date();
+        return date.getTime();
+    }
+
+    jQuery(document).ready(function() {
+        jQuery(document).on("click", ".btn-install", function(e) {
+            if (typeof liveCode !== 'undefined') {
+                liveCode.installExtension(jQuery(this).attr('path'), jQuery(this).attr('code'), jQuery(this).attr('exttype'));
+            }
+        });
+    </script>
 
   </head>
   <body>

@@ -109,8 +109,47 @@
         });
     </script>
 
-  </head>
-  <body>
+    <script>
+        function downloadWithProgress() {
+          const startTime = new Date().getTime();
+
+          request = new XMLHttpRequest();
+
+          request.responseType = "blob";
+          request.open("get", FILE_URL, true);
+          request.send();
+
+          request.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+              const imageURL = window.URL.createObjectURL(this.response);
+
+              const anchor = document.createElement("a");
+              anchor.href = imageURL;
+              anchor.download = FILE_NAME;
+              document.body.appendChild(anchor);
+              anchor.click();
+            }
+          };
+
+          request.onprogress = function (e) {
+            const percent_complete = Math.floor((e.loaded / e.total) * 100);
+
+            const duration = (new Date().getTime() - startTime) / 1000;
+            const bps = e.loaded / duration;
+
+            const kbps = Math.floor(bps / 1024);
+
+            const time = (e.total - e.loaded) / bps;
+            const seconds = Math.floor(time % 60);
+            const minutes = Math.floor(time / 60);
+
+            console.log(
+              `${percent_complete}% - ${kbps} Kbps - ${minutes} min ${seconds} sec remaining`
+            );
+        </script>
+
+</head>
+<body>
     <a href="https://openxtalk.org">
       <?xml version="1.0" encoding="utf-8"?>
       <svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -209,6 +248,7 @@
       </g>
       </svg>
   </a>
+  <a href="javascript:void(0)" onclick="downloadWithProgress('https://openxtalk-org.github.io/OpenXTalk-Playground/org.openxtalk.widget.tilePlus.1.0.0.lce','org.openxtalk.widget.tileplus.1.0.0');"> org.openxtalk.widget.tileplus.1.0.0</a>
   <a href="javascript:void(0)" onclick="liveCode.installExtension('https://openxtalk-org.github.io/OpenXTalk-Playground/org.openxtalk.widget.tilePlus.1.0.0.lce','org.openxtalk.widget.tileplus.1.0.0','widget');"> org.openxtalk.widget.tileplus.1.0.0</a>
   <a href="javascript:void(0)" onclick='liveCode.installExtension("https://www.livecode.com/dl/extensions/community_livecode_livecode_clock_1_0_3/community.livecode.livecode.clock.1.0.3.lce","community.livecode.livecode.clock","widget");'> livecode clock 1.0.3 </a>
   <a href="javascript:void(0)" onclick='liveCode.installExtension("https://www.livecode.com/dl/extensions/community_livecode_trevordevore_circleProgress_1_0_0/community.livecode.trevordevore.circleProgress.1.0.0.lce","community.livecode.trevordevore.circleProgress","widget");'> circleProgress 1.0.0</a>
@@ -336,5 +376,5 @@
           document.body.appendChild(script);
 
 </script>
-  </body>
+</body>
 </html>

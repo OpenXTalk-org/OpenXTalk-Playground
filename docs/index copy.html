@@ -1,4 +1,3 @@
-<!doctype html>
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
@@ -19,8 +18,7 @@
 
       #emscripten_logo {
         display: inline-block;
-        margin: 0;
-      }
+        margin: 0; }
 
       .spinner {
         height: 24px;
@@ -65,7 +63,7 @@
       #status {
         display: inline-block;
         vertical-align: top;
-        margin-top: 30px;
+        margin-top: 10px;
         margin-left: 20px;
         font-weight: bold;
         color: rgb(120, 120, 120);
@@ -96,7 +94,20 @@
         outline: none;
       }
     </style>
-<script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
+
+    <script>
+    function get_time() {
+        var date = new Date();
+        return date.getTime();
+    }
+
+    jQuery(document).ready(function() {
+        jQuery(document).on("click", ".btn-install", function(e) {
+            if (typeof liveCode !== 'undefined') {
+                liveCode.installExtension(jQuery(this).attr('path'), jQuery(this).attr('code'), jQuery(this).attr('exttype'));
+            }
+        });
+    </script>
 
   </head>
   <body>
@@ -198,6 +209,9 @@
       </g>
       </svg>
   </a>
+  <a href="javascript:void(0)" onclick="liveCode.installExtension('https://openxtalk-org.github.io/OpenXTalk-Playground/org.openxtalk.widget.tilePlus.1.0.0.lce','org.openxtalk.widget.tileplus.1.0.0','widget');"> org.openxtalk.widget.tileplus.1.0.0</a>
+  <a href="javascript:void(0)" onclick='liveCode.installExtension("https://www.livecode.com/dl/extensions/community_livecode_livecode_clock_1_0_3/community.livecode.livecode.clock.1.0.3.lce","community.livecode.livecode.clock","widget");'> livecode clock 1.0.3 </a>
+  <a href="javascript:void(0)" onclick='liveCode.installExtension("https://www.livecode.com/dl/extensions/community_livecode_trevordevore_circleProgress_1_0_0/community.livecode.trevordevore.circleProgress.1.0.0.lce","community.livecode.trevordevore.circleProgress","widget");'> circleProgress 1.0.0</a>
 
     <div class="spinner" id='spinner'></div>
     <div class="emscripten" id="status">Downloading xTalk WebStack...</div>

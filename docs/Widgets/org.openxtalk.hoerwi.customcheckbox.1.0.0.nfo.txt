@@ -1,0 +1,4 @@
+OpenXTalk-Widget-customCheckbox allows individual settings of a checkbox.
+Works with LC9.x
+Control can be configured as Checkbox as Square, Roundrect or Circle, Icon as Check or Cross
+the label can be displayed to the left or right of the checkbox.

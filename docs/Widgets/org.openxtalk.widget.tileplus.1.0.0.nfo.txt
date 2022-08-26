@@ -1,0 +1,1 @@
+Tile Plus widget is a modified version of the Tile widget which was used in the IDEs Start Center for the color shaded squares with centered text and SVG path icons. Tile Plus adds messages and properties to the widget with the goal of making it more workable as a general-use control, as a button or otherwise.

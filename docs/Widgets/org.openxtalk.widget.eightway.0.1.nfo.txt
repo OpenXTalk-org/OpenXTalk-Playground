@@ -1,0 +1,2 @@
+The Eight-Way widget can be used as a style virtual D-Pad-style controller.
+It sends messages indicating one of eight compass directions ((N,NE,E,etc.) of the click/press within the widget. There is an adjustable center 'dead-zone' circular area in the middle.

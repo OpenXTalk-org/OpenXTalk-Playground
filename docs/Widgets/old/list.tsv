@@ -1,0 +1,5 @@
+Name	ResID	Summary	B64URL	ResType	Author	Version	URL
+XYGrid Widget	org.openxtalk.paulmcclernan.xygrid	Clickable point X/Y grid Ccontrol	https://openxtalk-org.github.io/OpenXTalk-Playground/Widgets/org.openxtalk.paulmcclernan.xygrid.0.1.lce.b64	widget	OpenXTalk.org	0.1.0	???
+Eight-Way Widget	org.openxtalk.widget.eightway	8-direction virtual-joystick control	https://openxtalk-org.github.io/OpenXTalk-Playground/Widgets/org.openxtalk.widget.eightway.0.1.lce.b64	widget	OpenXTalk.org	0.1.0	???
+Tile Plus	org.openxtalk.widget.tileplus	A modified version of the IDE's Tile widget	https://openxtalk-org.github.io/OpenXTalk-Playground/Widgets/org.openxtalk.widget.tileplus.1.0.0.lce.b64	widget	OpenXTalk.org	1.0.0	???
+Custom Checkbox	org.openxtalk.hoerwi.customcheckbox	Checkbox control with additional options	https://openxtalk-org.github.io/OpenXTalk-Playground/Widgets/org.openxtalk.hoerwi.customcheckbox.1.0.0.lce.b64	widget	Hoerwi	1.0.0	???

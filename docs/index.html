@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Emscripten-Generated Code</title>
+    <title>OpenXTalk Web Stack</title>
     <style>
       body {
         font-family: arial;
@@ -13,7 +13,7 @@
 
       .emscripten { padding-right: 0; margin-left: auto; margin-right: auto; display: block; }
       div.emscripten { text-align: center; }
-      div.emscripten_border { border: 2px solid gray; }
+      div.emscripten_border { border: 1px solid gray; }
       /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
       canvas.emscripten { border: 0px none; }
 
@@ -25,24 +25,24 @@
       .spinner {
         height: 24px;
         width: 24px;
-        margin: 10px;
+        margin: 1px;
         margin-top: 5px;
-        margin-left: 5px;
+        margin-left: 120px;
         display: inline-block;
         vertical-align: top;
 
-        -webkit-animation: rotation .5s linear infinite;
-        -moz-animation: rotation .5s linear infinite;
-        -o-animation: rotation .5s linear infinite;
-        animation: rotation 0.5s linear infinite;
+        -webkit-animation: rotation .8s linear infinite;
+        -moz-animation: rotation .8s linear infinite;
+        -o-animation: rotation .8s linear infinite;
+        animation: rotation 0.8s linear infinite;
 
-        border-left: 4px solid rgb(200, 200, 255);
-        border-right: 4px solid rgb(170, 170, 200);
-        border-bottom: 4px solid rgb(160, 160, 190);
-        border-top: 4px solid rgb(150, 150, 180);
+        border-left: 5px solid rgb(150, 150, 150);
+        border-right: 5px solid rgb(180, 180, 180);
+        border-bottom: 3px solid rgb(200, 150, 220);
+        border-top: 3px solid rgb(150, 180, 200);
 
-        border-radius: 32px;
-        background-color: rgb(120, 120, 150);
+        border-radius: 48px;
+        background-color: rgb(100, 100, 150);
       }
 
       @-webkit-keyframes rotation {
@@ -65,14 +65,14 @@
       #status {
         display: inline-block;
         vertical-align: top;
-        margin-top: 30px;
-        margin-left: 20px;
+        margin-top: 5px;
+        margin-left: 48px;
         font-weight: bold;
-        color: rgb(120, 120, 120);
+        color: rgb(150, 120, 150);
       }
 
       #progress {
-        height: 100px;
+        height: 32px;
         width: 100px;
       }
 
@@ -80,15 +80,15 @@
         display: inline-block;
         float: right;
         vertical-align: top;
-        margin-top: 20px;
-        margin-right: 20px;
+        margin-top: 10px;
+        margin-right: 10px;
       }
 
       #output {
-        width: 100%;
-        height: 200px;
+        width: 99%;
+        height: 100px;
         margin: 0 auto;
-        margin-top: 10px;
+        margin-top: 1px;
         display: block;
         background-color: black;
         color: white;
@@ -96,14 +96,12 @@
         outline: none;
       }
     </style>
-<script src="https://unpkg.com/hyperscript.org@0.9.7"></script>
-
   </head>
   <body>
     <a href="https://openxtalk.org">
       <?xml version="1.0" encoding="utf-8"?>
       <svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-      x="0px" y="0px" width="48px" height="3%" viewBox="0 0 100 100" overflow="visible">
+      	 x="0px" y="0px" width="32px" height="32px" viewBox="0 0 48px 48px" overflow="visible">
       <g>
       	<path fill="#666396" d="M155.99,57.5c2.72,2.56,1.73,6.05-1.1,8.12c1.73,1.8,1.48,4.46-0.07,6.22c1.63,1.66,1.78,4.3,0.26,6.03
       		c1.43,1.65,1.5,3.99,0.12,5.68c1.26,1.52,1.36,3.77,0.12,5.36c1.2,1.55,1.19,3.68,0,5.24c3.59,5.97-5.03,8.81-8.5,12.19
@@ -200,15 +198,7 @@
   </a>
 
     <div class="spinner" id='spinner'></div>
-    <div class="emscripten" id="status">Downloading xTalk WebStack...</div>
-
-<span id='controls'>
-  <span><input type="checkbox" id="resize">Resize canvas</span>
-  <span><input type="checkbox" id="pointerLock" checked>Lock/hide mouse pointer &nbsp;&nbsp;&nbsp;</span>
-  <span><input type="button" value="Fullscreen" onclick="Module.requestFullScreen(document.getElementById('pointerLock').checked,
-                                                                            document.getElementById('resize').checked)">
-  </span>
-</span>
+    <div class="emscripten" id="status">Downloading...</div>
 
     <div class="emscripten">
       <progress value="0" max="100" id="progress" hidden=1></progress>
@@ -301,7 +291,6 @@
         };
       };
     </script>
-
     <script>
 
           (function() {

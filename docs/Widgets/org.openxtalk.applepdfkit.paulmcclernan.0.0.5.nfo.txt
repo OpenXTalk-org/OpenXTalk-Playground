@@ -1,0 +1,1 @@
+The OpenXTalk Apple PDFKit extension wrapper for Apple's PDFKit API. It is a control that can be used on Apple operating systems (only) to display portable document PDF files, with some additional functionality such as the ability to extract text from PDF pages.

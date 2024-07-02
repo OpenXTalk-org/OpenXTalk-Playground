@@ -201,10 +201,10 @@
     <div class="emscripten" id="status">Downloading...</div>
 
 <span id='controls'>
-  <span><input type="checkbox" id="resize">Resize canvas</span>
+  <span><!-- input type="checkbox" id="resize">Resize canvas</span>
   <span><input type="checkbox" id="pointerLock" checked>Lock/hide mouse pointer &nbsp;&nbsp;&nbsp;</span>
   <span><input type="button" value="Fullscreen" onclick="Module.requestFullScreen(document.getElementById('pointerLock').checked,
-                                                                            document.getElementById('resize').checked)">
+                                                                            document.getElementById('resize').checked)"-->
   </span>
 </span>
 
@@ -318,6 +318,24 @@
           script.src = "standalone-community-9.6.3.js";
           document.body.appendChild(script);
 
-</script>
+    </script>
+
+    <script>
+      function readFile() {
+        var inputData = document.getElementById('inputData');
+        var reader = new FileReader();
+        reader.onload = function() {
+          document.liveCode.findStackWithName('WebStack').
+          JSimport(reader.result, inputData.files[0].name);
+        };
+        reader.readAsDataURL(inputData.files[0]);
+      };
+      function saveFile(txt, data) {
+        var saveData = document.getElementById('saveData');
+        saveData.setAttribute('download', txt);
+        saveData.setAttribute('href', data);
+      };
+    </script>
+
   </body>
 </html>

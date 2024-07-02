@@ -320,6 +320,12 @@
 
     </script>
 
+    <div style='display:none;'>
+      <form>
+        <input id='inputData' type='file' onchange='readFile()'>
+      </form>
+      <a id='saveData'></a>
+    </div>
     <script>
       function readFile() {
         var inputData = document.getElementById('inputData');

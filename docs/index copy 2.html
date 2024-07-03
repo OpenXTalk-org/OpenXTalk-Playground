@@ -327,6 +327,7 @@
       <a id='saveData'></a>
     </div>
     <script>
+
       function readFile() {
         var inputData = document.getElementById('inputData');
         var reader = new FileReader();
@@ -336,11 +337,38 @@
         };
         reader.readAsDataURL(inputData.files[0]);
       };
+
       function saveFile(txt, data) {
         var saveData = document.getElementById('saveData');
         saveData.setAttribute('download', txt);
         saveData.setAttribute('href', data);
       };
+
+      const context = new AudioContext();
+
+      function loadSample(url) {
+        return fetch(url)
+          .then(response => response.arrayBuffer())
+          .then(buffer => context.decodeAudioData(buffer));
+      }
+
+      function playSample(sample) {
+        const source = context.createBufferSource();
+        source.buffer = sample;
+        source.connect(context.destination);
+        source.start(0);
+      }
+      function playSampleRate(sample, rate) {
+        const source = context.createBufferSource();
+        source.buffer = sample;
+        source.playbackRate.value = rate;
+        source.connect(context.destination);
+        source.start(0);
+      }
+
+      loadSample('boing.wav')
+        .then(sample => playSample(sample));
+
     </script>
 
   </body>

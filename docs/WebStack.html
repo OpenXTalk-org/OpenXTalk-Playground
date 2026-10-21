@@ -1,0 +1,73 @@
+<!doctypehtml>
+  <html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <title>OXT Web Playground WebASM!</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #fff;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif
+      }
+      #stack {
+        margin: 0 auto
+      }
+      #canvas {
+        display: block;
+        border: 0 none;
+        padding: 0;
+        outline: 0
+      }
+      #status {
+        padding: 16px;
+        text-align: center;
+        color: #666
+      }
+    </style>
+    <style>
+      body {
+        background-color: #7F7F7F }
+      #status {
+        color: #cccccc
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        min-height: 100dvh
+      }
+      #stack {
+        margin: auto
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div id=status>Loading...</div><noscript>
+      <div>This page needs JavaScript.</div>
+    </noscript>
+    <div id=stack><canvas id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas></div>
+    <script>
+      var statusElement = document.getElementById("status"),
+        Module = {
+          canvas: document.getElementById("canvas"),
+          print: function(t) {
+            console.log(t)
+          },
+          printErr: function(t) {
+            console.error(t)
+          },
+          setStatus: function(t) {
+            statusElement.textContent = t, statusElement.style.display = t ? "block" : "none"
+          }
+        };
+      window.addEventListener("error", function() {
+        Module.setStatus("Something went wrong. The browser console has the details.")
+      })
+    </script>
+    <script async src=standalone-community-9.7.1-OXT.js></script>
+  </body>
+
+  </html>

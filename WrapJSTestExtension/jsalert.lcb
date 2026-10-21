@@ -1,0 +1,22 @@
+/*
+-- To wrap a JavaScript function inside a LiveCode extension, you can write an xBuilder (LCB) library extension
+-- that uses Foreign Function Interface (FFI). This technique is primarily used when deploying your LiveCode applications to the Web (HTML5 deployment).
+-- Below is a complete walkthrough for creating a simple LCB library extension that wraps a JavaScript showAlert function.
+*/
+library org.openxtalk.jsalert
+  use com.livecode.foreign
+  -- Bind the JavaScript function using FFI, "javascript:" signals that it evaluates raw JS code
+  private foreign handler _js_show_alert(in pMessage as String) returns nothing binds to "javascript:alert(pMessage);"
+  -- Create a public handler to expose to the xTalk script interpreter
+  public handler ShowJSAlert(in pMessage as String) returns nothing
+    _js_show_alert(pMessage)
+  end handler
+end library
+
+/*
+-- Invoke the Extension from xTalk Script
+on mouseUp
+   -- Call the public handler defined in your JS wrapper extension
+   ShowJSAlert "Hello from OXT-Beyond xTalk! via JavaScript!"
+end mouseUp
+*/

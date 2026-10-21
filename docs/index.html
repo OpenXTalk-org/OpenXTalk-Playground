@@ -300,24 +300,9 @@
       };
     </script>
     <script>
-
-          (function() {
-            var memoryInitializer = 'standalone-community-9.6.3.html.mem';
-            if (typeof Module['locateFile'] === 'function') {
-              memoryInitializer = Module['locateFile'](memoryInitializer);
-            } else if (Module['memoryInitializerPrefixURL']) {
-              memoryInitializer = Module['memoryInitializerPrefixURL'] + memoryInitializer;
-            }
-            var xhr = Module['memoryInitializerRequest'] = new XMLHttpRequest();
-            xhr.open('GET', memoryInitializer, true);
-            xhr.responseType = 'arraybuffer';
-            xhr.send(null);
-          })();
-
           var script = document.createElement('script');
           script.src = "standalone-community-9.7.1-OXT.js";
           document.body.appendChild(script);
-
     </script>
 
     <div style='display:none;'>

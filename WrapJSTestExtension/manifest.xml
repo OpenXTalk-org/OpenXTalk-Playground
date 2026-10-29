@@ -1,0 +1,17 @@
+<package version="0.0">
+  <name>org.openxtalk.jsalert</name>
+  <title>Test JS module</title>
+  <author>Paul McClernan for OpenXTalk</author>
+  <version>0.1</version>
+  <license>community</license>
+  <type>library</type>
+  <requires name="com.livecode.emscripten"/>
+  <requires name="com.livecode.arithmetic"/>
+  <requires name="com.livecode.binary"/>
+  <requires name="com.livecode.list"/>
+  <requires name="com.livecode.logic"/>
+  <requires name="com.livecode.string"/>
+  <requires name="com.livecode.type"/>
+  <requires name="com.livecode.system"/>
+  <handler name="ShowJSAlert" parameters="in string" return="optional any"/>
+</package>
